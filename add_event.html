@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Event</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        input, select, textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="submit"] {
+            margin-top: 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Event</h1>
+        <form action="add_event.php" method="post">
+            <label for="name">Event Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                <option value="event">Event</option>
+                <option value="holiday">Holiday</option>
+            </select>
+
+            <label for="every_year">Repeat Every Year:</label>
+            <select id="every_year" name="every_year">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="badge">Badge (optional):</label>
+            <input type="text" id="badge" name="badge">
+
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color" value="#4CAF50">
+
+            <input type="submit" value="Add Event">
+        </form>
+    </div>
+</body>
+</html>
